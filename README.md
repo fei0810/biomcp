@@ -1,509 +1,185 @@
-# BioMCP: Biomedical Model Context Protocol
+# BioMCP
 
-> _Version 0.7.3 is the final release of the Python-based BioMCP server.
-> The project has been re-architected in Rust to be more agent-friendly —
-> using fewer tokens, consuming less context window, running faster, and
-> adding new data sources. The Python source code is preserved here under
-> the `v0.7.3` tag._
+BioMCP is a single-binary CLI and MCP server for querying biomedical databases.
+One command grammar, compact markdown output, 12 entities across 15+ data sources.
 
-BioMCP is an open source (MIT License) toolkit that empowers AI assistants and
-agents with specialized biomedical knowledge. Built following the Model Context
-Protocol (MCP), it connects AI systems to authoritative biomedical data
-sources, enabling them to answer questions about clinical trials, scientific
-literature, and genomic variants with precision and depth.
+## Install
 
-[![▶️ Watch the video](./docs/blog/images/what_is_biomcp_thumbnail.png)](https://www.youtube.com/watch?v=bKxOWrWUUhM)
-
-## MCPHub Certification
-
-BioMCP is certified by [MCPHub](https://mcphub.com/mcp-servers/genomoncology/biomcp). This certification ensures that BioMCP follows best practices for Model Context Protocol implementation and provides reliable biomedical data access.
-
-## Why BioMCP?
-
-While Large Language Models have broad general knowledge, they often lack
-specialized domain-specific information or access to up-to-date resources.
-BioMCP bridges this gap for biomedicine by:
-
-- Providing **structured access** to clinical trials, biomedical literature,
-  and genomic variants
-- Enabling **natural language queries** to specialized databases without
-  requiring knowledge of their specific syntax
-- Supporting **biomedical research** workflows through a consistent interface
-- Functioning as an **MCP server** for AI assistants and agents
-
-## Biomedical Data Sources
-
-BioMCP integrates with multiple biomedical data sources:
-
-### Literature Sources
-
-- **PubTator3/PubMed** - Peer-reviewed biomedical literature with entity annotations
-- **bioRxiv/medRxiv** - Preprint servers for biology and health sciences
-- **Europe PMC** - Open science platform including preprints
-
-### Clinical & Genomic Sources
-
-- **ClinicalTrials.gov** - Clinical trial registry and results database
-- **NCI Clinical Trials Search API** - National Cancer Institute's curated cancer trials database
-  - Advanced search filters (biomarkers, prior therapies, brain metastases)
-  - Organization and intervention databases
-  - Disease vocabulary with synonyms
-- **BioThings Suite** - Comprehensive biomedical data APIs:
-  - **MyVariant.info** - Consolidated genetic variant annotation
-  - **MyGene.info** - Real-time gene annotations and information
-  - **MyDisease.info** - Disease ontology and synonym information
-  - **MyChem.info** - Drug/chemical annotations and properties
-- **TCGA/GDC** - The Cancer Genome Atlas for cancer variant data
-- **1000 Genomes** - Population frequency data via Ensembl
-- **cBioPortal** - Cancer genomics portal with mutation occurrence data
-- **OncoKB** - Precision oncology knowledge base for clinical variant interpretation (demo server with BRAF, ROS1, TP53)
-  - Therapeutic implications and FDA-approved treatments
-  - Oncogenicity and mutation effect annotations
-  - Works immediately without authentication
-
-### Regulatory & Safety Sources
-
-- **OpenFDA** - FDA regulatory and safety data:
-  - **Drug Adverse Events (FAERS)** - Post-market drug safety reports
-  - **Drug Labels (SPL)** - Official prescribing information
-  - **Device Events (MAUDE)** - Medical device adverse events, with genomic device filtering
-
-## Available MCP Tools
-
-BioMCP provides 24 specialized tools for biomedical research:
-
-### Core Tools (3)
-
-#### 1. Think Tool (ALWAYS USE FIRST!)
-
-**CRITICAL**: The `think` tool MUST be your first step for ANY biomedical research task.
-
-```python
-# Start analysis with sequential thinking
-think(
-    thought="Breaking down the query about BRAF mutations in melanoma...",
-    thoughtNumber=1,
-    totalThoughts=3,
-    nextThoughtNeeded=True
-)
-```
-
-The sequential thinking tool helps:
-
-- Break down complex biomedical problems systematically
-- Plan multi-step research approaches
-- Track reasoning progress
-- Ensure comprehensive analysis
-
-#### 2. Search Tool
-
-The search tool supports two modes:
-
-##### Unified Query Language (Recommended)
-
-Use the `query` parameter with structured field syntax for powerful cross-domain searches:
-
-```python
-# Simple natural language
-search(query="BRAF melanoma")
-
-# Field-specific search
-search(query="gene:BRAF AND trials.condition:melanoma")
-
-# Complex queries
-search(query="gene:BRAF AND variants.significance:pathogenic AND articles.date:>2023")
-
-# Get searchable fields schema
-search(get_schema=True)
-
-# Explain how a query is parsed
-search(query="gene:BRAF", explain_query=True)
-```
-
-**Supported Fields:**
-
-- **Cross-domain**: `gene:`, `variant:`, `disease:`
-- **Trials**: `trials.condition:`, `trials.phase:`, `trials.status:`, `trials.intervention:`
-- **Articles**: `articles.author:`, `articles.journal:`, `articles.date:`
-- **Variants**: `variants.significance:`, `variants.rsid:`, `variants.frequency:`
-
-##### Domain-Based Search
-
-Use the `domain` parameter with specific filters:
-
-```python
-# Search articles (includes automatic cBioPortal integration)
-search(domain="article", genes=["BRAF"], diseases=["melanoma"])
-
-# Search with mutation-specific cBioPortal data
-search(domain="article", genes=["BRAF"], keywords=["V600E"])
-search(domain="article", genes=["SRSF2"], keywords=["F57*"])  # Wildcard patterns
-
-# Search trials
-search(domain="trial", conditions=["lung cancer"], phase="3")
-
-# Search variants
-search(domain="variant", gene="TP53", significance="pathogenic")
-```
-
-**Note**: When searching articles with a gene parameter, cBioPortal data is automatically included:
-
-- Gene-level summaries show mutation frequency across cancer studies
-- Mutation-specific searches (e.g., "V600E") show study-level occurrence data
-- Cancer types are dynamically resolved from cBioPortal API
-
-#### 3. Fetch Tool
-
-Retrieve full details for a single article, trial, or variant:
-
-```python
-# Fetch article details (supports both PMID and DOI)
-fetch(domain="article", id="34567890")  # PMID
-fetch(domain="article", id="10.1101/2024.01.20.23288905")  # DOI
-
-# Fetch trial with all sections
-fetch(domain="trial", id="NCT04280705", detail="all")
-
-# Fetch variant details
-fetch(domain="variant", id="rs113488022")
-```
-
-**Domain-specific options:**
-
-- **Articles**: `detail="full"` retrieves full text if available
-- **Trials**: `detail` can be "protocol", "locations", "outcomes", "references", or "all"
-- **Variants**: Always returns full details
-
-### Individual Tools (21)
-
-For users who prefer direct access to specific functionality, BioMCP also provides 21 individual tools:
-
-#### Article Tools (2)
-
-- **article_searcher**: Search PubMed/PubTator3 and preprints
-- **article_getter**: Fetch detailed article information (supports PMID and DOI)
-
-#### Trial Tools (5)
-
-- **trial_searcher**: Search ClinicalTrials.gov or NCI CTS API (via source parameter)
-- **trial_getter**: Fetch all trial details from either source
-- **trial_protocol_getter**: Fetch protocol information only (ClinicalTrials.gov)
-- **trial_references_getter**: Fetch trial publications (ClinicalTrials.gov)
-- **trial_outcomes_getter**: Fetch outcome measures and results (ClinicalTrials.gov)
-- **trial_locations_getter**: Fetch site locations and contacts (ClinicalTrials.gov)
-
-#### Variant Tools (2)
-
-- **variant_searcher**: Search MyVariant.info database
-- **variant_getter**: Fetch comprehensive variant details
-
-#### NCI-Specific Tools (6)
-
-- **nci_organization_searcher**: Search NCI's organization database
-- **nci_organization_getter**: Get organization details by ID
-- **nci_intervention_searcher**: Search NCI's intervention database (drugs, devices, procedures)
-- **nci_intervention_getter**: Get intervention details by ID
-- **nci_biomarker_searcher**: Search biomarkers used in trial eligibility criteria
-- **nci_disease_searcher**: Search NCI's controlled vocabulary of cancer conditions
-
-#### Gene, Disease & Drug Tools (3)
-
-- **gene_getter**: Get real-time gene information from MyGene.info
-- **disease_getter**: Get disease definitions and synonyms from MyDisease.info
-- **drug_getter**: Get drug/chemical information from MyChem.info
-
-**Note**: All individual tools that search by gene automatically include cBioPortal summaries when the `include_cbioportal` parameter is True (default). Trial searches can expand disease conditions with synonyms when `expand_synonyms` is True (default).
-
-## Quick Start
-
-### For Claude Desktop Users
-
-1. **Install `uv`** if you don't have it (recommended):
-
-   ```bash
-   # MacOS
-   brew install uv
-
-   # Windows/Linux
-   pip install uv
-   ```
-
-2. **Configure Claude Desktop**:
-   - Open Claude Desktop settings
-   - Navigate to Developer section
-   - Click "Edit Config" and add:
-   ```json
-   {
-     "mcpServers": {
-       "biomcp": {
-         "command": "uv",
-         "args": ["run", "--with", "biomcp-python", "biomcp", "run"]
-       }
-     }
-   }
-   ```
-   - Restart Claude Desktop and start chatting about biomedical topics!
-
-### Python Package Installation
+### Binary install (recommended)
 
 ```bash
-# Using pip
-pip install biomcp-python
-
-# Using uv (recommended for faster installation)
-uv pip install biomcp-python
-
-# Run directly without installation
-uv run --with biomcp-python biomcp trial search --condition "lung cancer"
+curl -fsSL https://raw.githubusercontent.com/genomoncology/biomcp/main/install.sh | bash
 ```
 
-## Configuration
+### Install skills
 
-### Environment Variables
-
-BioMCP supports optional environment variables for enhanced functionality:
+Install guided investigation workflows into your agent directory:
 
 ```bash
-# cBioPortal API authentication (optional)
-export CBIO_TOKEN="your-api-token"  # For authenticated access
-export CBIO_BASE_URL="https://www.cbioportal.org/api"  # Custom API endpoint
-
-# OncoKB demo server (optional - advanced users only)
-# By default: Uses free demo server with BRAF, ROS1, TP53 (no setup required)
-# For full gene access: Set ONCOKB_TOKEN from your OncoKB license
-# export ONCOKB_TOKEN="your-oncokb-token"  # www.oncokb.org/account/settings
-
-# Performance tuning
-export BIOMCP_USE_CONNECTION_POOL="true"  # Enable HTTP connection pooling (default: true)
-export BIOMCP_METRICS_ENABLED="false"     # Enable performance metrics (default: false)
+biomcp skill install ~/.claude --force
 ```
 
-## Running BioMCP Server
+### For Claude Desktop / Cursor / MCP clients
 
-BioMCP supports multiple transport protocols to suit different deployment scenarios:
+```json
+{
+  "mcpServers": {
+    "biomcp": {
+      "command": "biomcp",
+      "args": ["serve"]
+    }
+  }
+}
+```
 
-### Local Development (STDIO)
-
-For direct integration with Claude Desktop or local MCP clients:
+### From source
 
 ```bash
-# Default STDIO mode for local development
-biomcp run
-
-# Or explicitly specify STDIO
-biomcp run --mode stdio
+cargo build --release --locked
 ```
 
-### HTTP Server Mode
-
-BioMCP supports multiple HTTP transport protocols:
-
-#### Legacy SSE Transport (Worker Mode)
-
-For backward compatibility with existing SSE clients:
+## Quick start
 
 ```bash
-biomcp run --mode worker
-# Server available at http://localhost:8000/sse
+biomcp health --apis-only            # verify API connectivity
+biomcp list                          # show all entities and commands
+biomcp list gene                     # show gene-specific filters and examples
 ```
 
-#### Streamable HTTP Transport (Recommended)
+## Command grammar
 
-The new MCP-compliant Streamable HTTP transport provides optimal performance and standards compliance:
+```
+search <entity> [filters]    → discovery
+get <entity> <id> [sections] → focused detail
+<entity> <helper> <id>       → cross-entity pivots
+enrich <GENE1,GENE2,...>     → gene-set enrichment
+batch <entity> <id1,id2,...> → parallel gets
+```
+
+## Entities and sources
+
+| Entity | Sources | Example |
+|--------|---------|---------|
+| gene | MyGene.info, UniProt, Reactome, QuickGO, STRING, CIViC | `biomcp get gene BRAF pathways` |
+| variant | MyVariant.info, ClinVar, gnomAD, CIViC, OncoKB, cBioPortal, GWAS Catalog, AlphaGenome | `biomcp get variant "BRAF V600E" clinvar` |
+| article | PubMed, PubTator3, Europe PMC | `biomcp search article -g BRAF --limit 5` |
+| trial | ClinicalTrials.gov, NCI CTS API | `biomcp search trial -c melanoma -s recruiting` |
+| drug | MyChem.info, ChEMBL, OpenTargets, Drugs\@FDA, CIViC | `biomcp get drug pembrolizumab targets` |
+| disease | Monarch Initiative, MONDO, CIViC, OpenTargets | `biomcp get disease "Lynch syndrome" genes` |
+| pathway | Reactome, g:Profiler | `biomcp get pathway R-HSA-5673001 genes` |
+| protein | UniProt, InterPro, STRING, PDB/AlphaFold | `biomcp get protein P15056 domains` |
+| adverse-event | OpenFDA (FAERS, MAUDE, Recalls) | `biomcp search adverse-event -d pembrolizumab` |
+| pgx | CPIC, PharmGKB | `biomcp get pgx CYP2D6 recommendations` |
+| gwas | GWAS Catalog | `biomcp search gwas --trait "type 2 diabetes"` |
+| phenotype | Monarch Initiative (HPO) | `biomcp search phenotype "HP:0001250"` |
+
+## Cross-entity helpers
+
+Pivot between related entities without rebuilding filters:
 
 ```bash
-biomcp run --mode streamable_http
-
-# Custom host and port
-biomcp run --mode streamable_http --host 127.0.0.1 --port 8080
+biomcp variant trials "BRAF V600E" --limit 5
+biomcp variant articles "BRAF V600E"
+biomcp drug adverse-events pembrolizumab
+biomcp drug trials pembrolizumab
+biomcp disease trials melanoma
+biomcp disease drugs melanoma
+biomcp disease articles "Lynch syndrome"
+biomcp gene articles BRCA1
+biomcp gene pathways BRAF
+biomcp pathway drugs R-HSA-5673001
+biomcp protein structures P15056
+biomcp article entities 22663011
 ```
 
-Features of Streamable HTTP transport:
-
-- Single `/mcp` endpoint for all operations
-- Dynamic response mode (JSON for quick operations, SSE for long-running)
-- Session management support (future)
-- Full MCP specification compliance (2025-03-26)
-- Better scalability for cloud deployments
-
-### Deployment Options
-
-#### Docker
+## Gene-set enrichment
 
 ```bash
-# Build the Docker image locally
-docker build -t biomcp:latest .
-
-# Run the container
-docker run -p 8000:8000 biomcp:latest biomcp run --mode streamable_http
+biomcp enrich BRAF,KRAS,NRAS --limit 10
 ```
 
-#### Cloudflare Workers
+## Sections and progressive disclosure
 
-The worker mode can be deployed to Cloudflare Workers for global edge deployment.
-
-Note: All APIs work without authentication, but tokens may provide higher rate limits.
-
-## Command Line Interface
-
-BioMCP provides a comprehensive CLI for direct database interaction:
+Every `get` command supports selectable sections for focused output:
 
 ```bash
-# Get help
-biomcp --help
+biomcp get gene BRAF                    # summary card
+biomcp get gene BRAF pathways           # add pathway section
+biomcp get gene BRAF civic interactions # multiple sections
+biomcp get gene BRAF all                # everything
 
-# Run the MCP server
-biomcp run
-
-# Article search examples
-biomcp article search --gene BRAF --disease Melanoma  # Includes preprints by default
-biomcp article search --gene BRAF --no-preprints      # Exclude preprints
-biomcp article get 21717063 --full
-
-# Clinical trial examples
-biomcp trial search --condition "Lung Cancer" --phase PHASE3
-biomcp trial search --condition melanoma --source nci --api-key YOUR_KEY  # Use NCI API
-biomcp trial get NCT04280705 Protocol
-biomcp trial get NCT04280705 --source nci --api-key YOUR_KEY  # Get from NCI
-
-# Variant examples with external annotations
-biomcp variant search --gene TP53 --significance pathogenic
-biomcp variant get rs113488022  # Includes TCGA, 1000 Genomes, and cBioPortal data by default
-biomcp variant get rs113488022 --no-external  # Core annotations only
-
-# OncoKB integration (uses free demo server automatically)
-biomcp variant search --gene BRAF --include-oncokb  # Works with BRAF, ROS1, TP53
-
-# Gene information with functional enrichment
-biomcp gene get TP53 --enrich pathway
-biomcp gene get BRCA1 --enrich ontology
-biomcp gene get EGFR --enrich celltypes
-
-# NCI-specific examples (requires NCI API key)
-biomcp organization search "MD Anderson" --api-key YOUR_KEY
-biomcp organization get ORG123456 --api-key YOUR_KEY
-biomcp intervention search pembrolizumab --api-key YOUR_KEY
-biomcp intervention search --type Device --api-key YOUR_KEY
-biomcp biomarker search "PD-L1" --api-key YOUR_KEY
-biomcp disease search melanoma --source nci --api-key YOUR_KEY
+biomcp get variant "BRAF V600E" clinvar population conservation
+biomcp get drug pembrolizumab label shortage targets indications approvals
+biomcp get disease "Lynch syndrome" genes phenotypes variants
+biomcp get trial NCT02576665 eligibility locations outcomes
 ```
 
-## Testing & Verification
+## API keys
 
-Test your BioMCP setup with the MCP Inspector:
+Most commands work without credentials. Optional keys improve rate limits:
 
 ```bash
-npx @modelcontextprotocol/inspector uv run --with biomcp-python biomcp run
+export NCBI_API_KEY="..."      # PubTator, PMC OA, NCBI ID converter
+export OPENFDA_API_KEY="..."   # OpenFDA rate limits
+export NCI_API_KEY="..."       # NCI CTS trial search (--source nci)
+export ONCOKB_TOKEN="..."      # OncoKB variant helper
+export ALPHAGENOME_API_KEY="..." # AlphaGenome variant effect prediction
 ```
 
-This opens a web interface where you can explore and test all available tools.
+## Multi-worker deployment
 
-## Enterprise Version: OncoMCP
+BioMCP rate limiting is process-local. For many concurrent workers, run one shared
+`biomcp serve-http` endpoint so all workers share a single limiter budget:
 
-OncoMCP extends BioMCP with GenomOncology's enterprise-grade precision oncology
-platform (POP), providing:
-
-- **HIPAA-Compliant Deployment**: Secure on-premise options
-- **Real-Time Trial Matching**: Up-to-date status and arm-level matching
-- **Healthcare Integration**: Seamless EHR and data warehouse connectivity
-- **Curated Knowledge Base**: 15,000+ trials and FDA approvals
-- **Sophisticated Patient Matching**: Using integrated clinical and molecular
-  profiles
-- **Advanced NLP**: Structured extraction from unstructured text
-- **Comprehensive Biomarker Processing**: Mutation and rule processing
-
-Learn more: [GenomOncology](https://genomoncology.com/)
-
-## MCP Registries
-
-[![smithery badge](https://smithery.ai/badge/@genomoncology/biomcp)](https://smithery.ai/server/@genomoncology/biomcp)
-
-<a href="https://glama.ai/mcp/servers/@genomoncology/biomcp">
-<img width="380" height="200" src="https://glama.ai/mcp/servers/@genomoncology/biomcp/badge" />
-</a>
-
-## Example Use Cases
-
-### Gene Information Retrieval
-
-```python
-# Get comprehensive gene information
-gene_getter(gene_id_or_symbol="TP53")
-# Returns: Official name, summary, aliases, links to databases
+```bash
+biomcp serve-http --host 0.0.0.0 --port 8080
 ```
 
-### Disease Synonym Expansion
+## Skills
 
-```python
-# Get disease information with synonyms
-disease_getter(disease_id_or_name="GIST")
-# Returns: "gastrointestinal stromal tumor" and other synonyms
+14 guided investigation workflows are built in:
 
-# Search trials with automatic synonym expansion
-trial_searcher(conditions=["GIST"], expand_synonyms=True)
-# Searches for: GIST OR "gastrointestinal stromal tumor" OR "GI stromal tumor"
+```bash
+biomcp skill list
+biomcp skill show 03
 ```
 
-### Integrated Biomedical Research
+| # | Skill | Focus |
+|---|-------|-------|
+| 01 | variant-to-treatment | Variant annotation to treatment options |
+| 02 | drug-investigation | Drug mechanism, safety, alternatives |
+| 03 | trial-searching | Trial discovery and patient matching |
+| 04 | rare-disease | Rare disease evidence and trial strategy |
+| 05 | drug-shortages | Shortage monitoring and alternatives |
+| 06 | advanced-therapies | CAR-T and checkpoint therapy workflows |
+| 07 | hereditary-cancer | Hereditary cancer syndrome workup |
+| 08 | resistance | Resistance mechanisms and next-line options |
+| 09 | gene-function-lookup | Gene-centric function and context |
+| 10 | gene-set-analysis | Enrichment, pathway, and interaction synthesis |
+| 11 | literature-synthesis | Evidence synthesis with cross-entity checks |
+| 12 | pharmacogenomics | PGx gene-drug interactions and dosing |
+| 13 | phenotype-triage | Symptom-first rare disease workup |
+| 14 | protein-pathway | Protein structure and pathway deep dive |
 
-```python
-# 1. Always start with thinking
-think(thought="Analyzing BRAF V600E in melanoma treatment", thoughtNumber=1)
+## Ops
 
-# 2. Get gene context
-gene_getter("BRAF")
-
-# 3. Search for pathogenic variants with OncoKB clinical interpretation (uses free demo server)
-variant_searcher(gene="BRAF", hgvsp="V600E", significance="pathogenic", include_oncokb=True)
-
-# 4. Find relevant clinical trials with disease expansion
-trial_searcher(conditions=["melanoma"], interventions=["BRAF inhibitor"])
+```bash
+biomcp version          # show version and build info
+biomcp health           # check all API connectivity
+biomcp update           # self-update to latest release
+biomcp update --check   # check for updates without installing
+biomcp uninstall        # remove biomcp from ~/.local/bin
 ```
 
 ## Documentation
 
-For comprehensive documentation, visit [https://biomcp.org](https://biomcp.org)
+Full documentation at [biomcp.org](https://biomcp.org/).
 
-### Developer Guides
-
-- [HTTP Client Guide](./docs/http-client-guide.md) - Using the centralized HTTP client
-- [Migration Examples](./docs/migration-examples.md) - Migrating from direct HTTP usage
-- [Error Handling Guide](./docs/error-handling.md) - Comprehensive error handling patterns
-- [Integration Testing Guide](./docs/integration-testing.md) - Best practices for reliable integration tests
-- [Third-Party Endpoints](./THIRD_PARTY_ENDPOINTS.md) - Complete list of external APIs used
-- [Testing Guide](./docs/development/testing.md) - Running tests and understanding test categories
-
-## Development
-
-### Running Tests
-
-```bash
-# Run all tests (including integration tests)
-make test
-
-# Run only unit tests (excluding integration tests)
-uv run python -m pytest tests -m "not integration"
-
-# Run only integration tests
-uv run python -m pytest tests -m "integration"
-```
-
-**Note**: Integration tests make real API calls and may fail due to network issues or rate limiting.
-In CI/CD, integration tests are run separately and allowed to fail without blocking the build.
-
-## BioMCP Examples Repo
-
-Looking to see BioMCP in action?
-
-Check out the companion repository:
-👉 **[biomcp-examples](https://github.com/genomoncology/biomcp-examples)**
-
-It contains real prompts, AI-generated research briefs, and evaluation runs across different models.
-Use it to explore capabilities, compare outputs, or benchmark your own setup.
-
-Have a cool example of your own?
-**We’d love for you to contribute!** Just fork the repo and submit a PR with your experiment.
+- [Getting Started](docs/getting-started/installation.md)
+- [Data Sources](docs/reference/data-sources.md)
+- [Quick Reference](docs/reference/quick-reference.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
