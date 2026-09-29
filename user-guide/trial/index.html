@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://biomcp.org/user-guide/trial/">
       
       
-        <link rel="prev" href="../article/">
+        <link rel="prev" href="../author/">
       
       
-        <link rel="next" href="../drug/">
+        <link rel="next" href="../diagnostic/">
       
       
         
@@ -307,11 +307,51 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../sources/" class="md-tabs__link">
+          
+  
+  
+  Sources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../how-to/annotate-variants/" class="md-tabs__link">
           
   
   
   How-To
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../charts/" class="md-tabs__link">
+          
+  
+  
+  Study Charts
 
         </a>
       </li>
@@ -344,6 +384,26 @@
   
   
   
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/variant-structure-in-commands/" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
     <li class="md-tabs__item">
       <a href="../../policies/" class="md-tabs__link">
         
@@ -351,7 +411,7 @@
   
     
   
-  Policies
+  Privacy Policy
 
       </a>
     </li>
@@ -383,13 +443,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../changelog/" class="md-tabs__link">
+      <a href="https://github.com/genomoncology/biomcp/releases" class="md-tabs__link">
         
   
   
     
   
-  Changelog
+  Release notes
 
       </a>
     </li>
@@ -588,6 +648,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../getting-started/mcp-clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Clients
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../getting-started/claude-desktop/" class="md-nav__link">
         
   
@@ -596,6 +684,34 @@
     
   
     Claude Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/remote-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote HTTP Server
   
 
     
@@ -879,6 +995,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../discover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gene/" class="md-nav__link">
         
   
@@ -943,6 +1087,62 @@
     
   
     Article
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supplementary-materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplementary Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../author/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Author
   
 
     
@@ -1042,6 +1242,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Search trials (default source)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-filtered-searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty filtered searches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination termination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1078,6 +1317,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#helper-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helper commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloaded-text-and-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1100,10 +1350,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trial-matching-tips" class="md-nav__link">
+  <a href="#practical-tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trial matching tips
+        Practical tips
       
     </span>
   </a>
@@ -1125,6 +1375,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1201,6 +1479,34 @@
     
   
     Pathway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cell-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cell Line
   
 
     
@@ -1354,6 +1660,65 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1361,14 +1726,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../organization/" class="md-nav__link">
+      <a href="../../sources/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Organization
+    Overview
   
 
     
@@ -1389,14 +1754,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../intervention/" class="md-nav__link">
+      <a href="../../sources/pubmed/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Intervention
+    PubMed
   
 
     
@@ -1417,14 +1782,882 @@
   
   
     <li class="md-nav__item">
-      <a href="../biomarker/" class="md-nav__link">
+      <a href="../../sources/clinicaltrials-gov/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Biomarker
+    ClinicalTrials.gov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/clingen-allele-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ClinGen Allele Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/clingen-cspec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ClinGen CSpec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/clingen-erepo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ClinGen ERepo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/clingen-ldh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ClinGen LDH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/gencc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GenCC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/clinvar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ClinVar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/openfda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/uniprot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/gnomad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gnomAD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/reactome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reactome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/semantic-scholar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Scholar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/chembl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ChEMBL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/opentargets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTargets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/seer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEER Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/civic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIViC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/oncokb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OncoKB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/cbioportal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cBioPortal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/ddinter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDInter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/ema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/who-prequalification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WHO Prequalification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/gtr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NCBI Genetic Testing Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/who-ivd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WHO Prequalified IVD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/cdc-cvx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDC CVX/MVX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/vaers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDC WONDER VAERS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/medlineplus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MedlinePlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/kegg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KEGG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/pharmgkb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PharmGKB / CPIC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/human-protein-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human Protein Atlas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/monarch-initiative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monarch Initiative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/cellosaurus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cellosaurus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sources/pharmacodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PharmacoDB
   
 
     
@@ -1465,10 +2698,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1486,8 +2719,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1512,6 +2745,62 @@
     
   
     Annotate Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/annotate-variant-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annotate Variant Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/cross-entity-pivots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Entity Pivots
   
 
     
@@ -1644,6 +2933,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../../how-to/search-all-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search All Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/skill-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill Authoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../how-to/skill-validation/" class="md-nav__link">
         
   
@@ -1652,6 +2997,34 @@
     
   
     Skill Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/guide-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide Workflows
   
 
     
@@ -1692,10 +3065,433 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Charts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Study Charts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/stacked-bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stacked Bar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/pie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/waterfall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Waterfall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/scatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scatter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/heatmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Heatmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/histogram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Histogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/density/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Density
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/violin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Violin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/ridgeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ridgeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Survival
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1713,8 +3509,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1787,6 +3583,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/source-licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/mcp-server/" class="md-nav__link">
         
   
@@ -1795,6 +3619,34 @@
     
   
     MCP Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/release-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Process
   
 
     
@@ -1871,6 +3723,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/bioasq-benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BioASQ Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/faq/" class="md-nav__link">
         
   
@@ -1879,6 +3759,34 @@
     
   
     FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
   
 
     
@@ -2004,6 +3912,373 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/variant-structure-in-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From BRAF V600E to 3D Protein Context in 3 BioMCP Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/daraxonrasib-six-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daraxonrasib: Exploring a Breakthrough Cancer Drug in 6 BioMCP Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/kras-g12c-treatment-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KRAS G12C Treatment Landscape in 7 Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/biomcp-charts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generate Charts Easily from Study Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/biomcp-kuva-charts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kuva Charting Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/biomcp-pubmed-articles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigate 200 Million Published Articles with BioMCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/skillbench-biomcp-skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Healthcare Agents Need Skills, Not Just Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/cbioportal-study-analytics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cBioPortal Study Analytics in BioMCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/we-deleted-35-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    We Deleted 35 Tools and Our Agent Got Better
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/st-jude-2025-hackathon-talk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The 2025 KIDS BioHackathon Winner Used BioMCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2025,7 +4300,7 @@
   <span class="md-ellipsis">
     
   
-    Policies
+    Privacy Policy
   
 
     
@@ -2072,14 +4347,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="https://github.com/genomoncology/biomcp/releases" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Changelog
+    Release notes
   
 
     
@@ -2138,6 +4413,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Search trials (default source)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-filtered-searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty filtered searches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination termination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2174,6 +4488,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#helper-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helper commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#downloaded-text-and-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2196,10 +4521,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trial-matching-tips" class="md-nav__link">
+  <a href="#practical-tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trial matching tips
+        Practical tips
       
     </span>
   </a>
@@ -2252,57 +4577,223 @@
 <p>Add intervention and phase filters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>-i<span class="w"> </span>pembrolizumab<span class="w"> </span>--phase<span class="w"> </span><span class="m">3</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
+<p>Condition searches send the supplied label literally.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;Rett Syndrome&quot;</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">20</span>
+</code></pre></div>
+<h3 id="status-values">Status values<a class="headerlink" href="#status-values" title="Permanent link">&para;</a></h3>
+<p><code>--status</code> accepts eight normalized recruitment states: <code>recruiting</code>,
+<code>not_yet_recruiting</code>, <code>enrolling_by_invitation</code>, <code>active_not_recruiting</code>,
+<code>completed</code>, <code>suspended</code>, <code>terminated</code>, and <code>withdrawn</code>.</p>
+<p>BioMCP refuses a bare <code>--status active</code> as ambiguous, because the two sources
+mean different things by it: NCI uses "active" for a trial that is open and
+accruing, while ClinicalTrials.gov uses it for one that has stopped accruing.
+Use <code>--status recruiting</code> for open and accruing trials, or
+<code>--status active_not_recruiting</code> for enrolled and no longer accruing trials.
+The comma form <code>--status "active, not recruiting"</code> is still accepted as an
+alias for <code>active_not_recruiting</code>.</p>
+<h3 id="empty-filtered-searches">Empty filtered searches<a class="headerlink" href="#empty-filtered-searches" title="Permanent link">&para;</a></h3>
+<p>A filtered search that returns zero rows prints a broadening hint instead of
+implying that no trials exist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>No trials found matching the filters.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Try broadening the filtered search:
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>- loosen or drop `--mutation`; it is an exact free-text boolean search
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- widen `--distance` or remove the geo filter
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- relax `--status` to include non-recruiting or not-yet-recruiting trials
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>- try `--biomarker &lt;gene&gt;`
+</code></pre></div>
+<p>The JSON response carries the same relaxations as runnable commands in
+<code>_meta.next_commands</code>.</p>
+<p>When <code>--criteria</code> supplies eligibility text, registry eligibility verification
+can remove every provider match because the term appears only in exclusion
+criteria or outside the inclusion section. The Markdown hint then names the
+upstream count, and JSON adds <code>_meta.upstream_total</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ClinicalTrials.gov matched 2 trial(s) on this eligibility text, but registry
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>eligibility verification removed all of them (the term appears only in
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>exclusion criteria or outside the inclusion section). Try a shorter phrase or
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>`--mutation` for broader field coverage.
+</code></pre></div>
+<p>The suggested relaxation moves the eligibility text from <code>--criteria</code> to
+<code>--mutation</code>, which searches the title, summary, eligibility, and keyword
+fields. <code>_meta.upstream_total</code> appears only on an empty page whose upstream
+total is greater than zero.</p>
+<h3 id="pagination-termination">Pagination termination<a class="headerlink" href="#pagination-termination" title="Permanent link">&para;</a></h3>
+<p>For JSON ClinicalTrials.gov trial searches, continue only while
+<code>pagination.has_more</code> is true and pass the opaque <code>pagination.next_page_token</code>
+back as <code>--next-page</code>. When a
+reported total says the returned page reaches the end, BioMCP returns
+<code>has_more: false</code> and no next-page token, even if the upstream registry supplied
+one. This prevents a pagination client from restarting at earlier results.</p>
+<p>On the default CTGov path, every <code>--intervention</code> worker is sent as one quoted
+literal. BioMCP can expand the name with plausible trade names and
+investigational codes, excludes systematic chemical synonyms, unions the
+matching trials, and shows which alias matched each returned row.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-i<span class="w"> </span>daraxonrasib<span class="w"> </span>--limit<span class="w"> </span><span class="m">20</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-i<span class="w"> </span>daraxonrasib<span class="w"> </span>--no-alias-expand<span class="w"> </span>--limit<span class="w"> </span><span class="m">20</span>
+</code></pre></div>
+<p>When an alternate alias wins, markdown adds a <code>Matched Intervention</code> column and
+JSON adds <code>matched_intervention_label</code>. If CTGov rejects only an expanded alias,
+BioMCP keeps successful requested-name results and leaves the exact total unknown.
+<code>--no-alias-expand</code> performs one literal request for the supplied name. If
+intervention expansion fans out to multiple CTGov queries, <code>--next-page</code> is
+unavailable; use <code>--offset</code> or <code>--no-alias-expand</code>.</p>
+<p>JSON search and detail output preserve the complete provider condition array.
+Markdown detail lists every condition, while the search table keeps its compact
+condition cell; when that cell is abridged, it states the complete condition
+count.</p>
 <p>Add biomarker filters:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--mutation<span class="w"> </span><span class="s2">&quot;BRAF V600E&quot;</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--biomarker<span class="w"> </span>BRAF<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--mutation<span class="w"> </span><span class="s2">&quot;BRAF V600E&quot;</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--biomarker<span class="w"> </span>BRAF<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
+<p><code>--mutation</code> broadly searches CTGov title, summary, eligibility, and keyword
+fields. After broad discovery, simple mutation text receives a registry eligibility
+check that removes exclusion-only matches. Trials where the term is absent remain
+discoverable, and boolean expressions are discovery-only.</p>
+<p>Hyphenated terms reach the registry exactly as typed. BioMCP does not
+backslash-escape hyphens in ClinicalTrials.gov ESSIE literals, because the
+registry treats an escaped hyphen as a different, far narrower phrase. Terms
+such as <code>anti-PD-1</code>, <code>CAR-T</code>, <code>PD-L1</code>, and combined labels such as <code>dMMR/MSI-H</code>
+therefore search the same text the registry holds, in <code>--criteria</code>,
+<code>--mutation</code>, <code>--biomarker</code>, <code>--sponsor</code>, <code>--study-type</code>, <code>--prior-therapies</code>,
+<code>--progression-on</code>, and quoted <code>--intervention</code> literals.</p>
+<p><code>--age</code> accepts finite patient ages from 0 through 150 years, including
+fractional ages. A registry bound must match the exact numeric grammar
+<code>[0-9]+(?:\.[0-9]+)?</code>, followed by either no unit or one recognized singular or
+plural unit: years, months, weeks, days, hours, or minutes (case-insensitive).
+One or more Unicode whitespace characters may surround the numeric/unit tokens
+and, when a unit is present, must separate it from the number. Only outer
+whitespace is removed from <code>original</code>; internal whitespace is retained exactly.
+A missing unit means years. Signs, leading or trailing decimal points, exponent
+notation, <code>NaN</code>, positive infinity spellings (<code>inf</code>, <code>Infinity</code>, <code>+inf</code>,
+<code>+Infinity</code>), negative infinity spellings (<code>-inf</code>, <code>-Infinity</code>), punctuation,
+trailing tokens, numeric overflow, and unknown units are rejected as malformed.
+Filtering compares years, months, weeks, and days; hours, minutes, <code>N/A</code>, and
+malformed provider text fail open rather than excluding a trial.</p>
 <p>Geographic filtering:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--lat<span class="w"> </span><span class="m">42</span>.36<span class="w"> </span>--lon<span class="w"> </span>-71.06<span class="w"> </span>--distance<span class="w"> </span><span class="m">50</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--lat<span class="w"> </span><span class="m">42</span>.36<span class="w"> </span>--lon<span class="w"> </span>-71.06<span class="w"> </span>--distance<span class="w"> </span><span class="m">50</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
-<p>When geo filters are set, the search query summary includes <code>lat</code>, <code>lon</code>, and <code>distance</code>.</p>
+<p>When geo filters are set, the search query summary includes <code>lat</code>, <code>lon</code>, and
+<code>distance</code>. Latitude must be finite from -90 through 90, and longitude must be
+finite from -180 through 180.</p>
 <p>Prior-therapy filters:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--prior-therapies<span class="w"> </span>platinum<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--line-of-therapy<span class="w"> </span>2L<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--prior-therapies<span class="w"> </span>platinum<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--line-of-therapy<span class="w"> </span>2L<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
 <h2 id="search-trials-nci-source">Search trials (NCI source)<a class="headerlink" href="#search-trials-nci-source" title="Permanent link">&para;</a></h2>
-<p>Use NCI CTS when needed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--source<span class="w"> </span>nci<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+<p>Use NCI CTS when you want the shared BioMCP trial CLI to target the NCI trial
+catalog instead of ClinicalTrials.gov.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--source<span class="w"> </span>nci<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
-<p>For higher limits/reliability, set <code>NCI_API_KEY</code>.</p>
+<p><code>--condition</code> remains the NCI entry point. BioMCP first tries to ground the
+condition through MyDisease and, when the best match has an NCI Thesaurus
+cross-reference, sends <code>diseases.nci_thesaurus_concept_id=&lt;C-code&gt;</code>. When no
+grounded NCI ID is available, BioMCP falls back to CTS <code>keyword=&lt;text&gt;</code>.
+There is no separate NCI keyword flag in this ticket.</p>
+<p>NCI status handling is source-specific. Use one normalized status at a time:</p>
+<ul>
+<li><code>recruiting</code> maps to CTS <code>sites.recruitment_status=ACTIVE</code></li>
+<li><code>not yet recruiting</code>, <code>enrolling by invitation</code>, <code>active, not recruiting</code>,
+  <code>completed</code>, <code>suspended</code>, <code>terminated</code>, and <code>withdrawn</code> map to the closest
+  documented CTS lifecycle or site-status value</li>
+<li>comma-separated status lists are rejected for <code>--source nci</code></li>
+</ul>
+<p>NCI phase handling is also source-specific:</p>
+<ul>
+<li>shared input also accepts <code>NA</code>/<code>N/A</code> and the early-phase aliases
+  <code>EARLY_PHASE1</code>, <code>early_phase1</code>, and <code>early1</code>; matching is case-insensitive</li>
+<li>canonical <code>PHASE1</code> through <code>PHASE4</code>, numeric <code>1</code> through <code>4</code>, and Roman <code>I</code>
+  through <code>IV</code> normalize to the same four scalar phases</li>
+<li><code>PHASE1/PHASE2</code>, <code>1/2</code>, and <code>I_II</code> denote the single combined Phase 1/2
+  label and map to CTS <code>I_II</code></li>
+<li><code>PHASE2/PHASE3</code>, <code>2/3</code>, and <code>II_III</code> denote the single combined Phase 2/3
+  label and map to CTS <code>II_III</code></li>
+<li><code>NA</code> and <code>N/A</code> become <code>NA</code></li>
+<li>scalar NCI requests stay scalar rather than expanding to overlapping
+  combined labels</li>
+<li><code>EARLY_PHASE1</code>, <code>early_phase1</code>, and <code>early1</code> are accepted shared inputs but
+  rejected for <code>--source nci</code>; CTGov accepts them</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--source<span class="w"> </span>nci<span class="w"> </span>--status<span class="w"> </span>recruiting<span class="w"> </span>--phase<span class="w"> </span><span class="m">1</span>/2<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>NCI geographic filtering is direct CTS filtering rather than CTGov's
+geo-verify mode. When <code>--lat</code>, <code>--lon</code>, and <code>--distance</code> are all present,
+BioMCP sends <code>sites.org_coordinates_lat</code>, <code>sites.org_coordinates_lon</code>, and
+<code>sites.org_coordinates_dist=&lt;N&gt;mi</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>biomcp<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-c<span class="w"> </span>melanoma<span class="w"> </span>--source<span class="w"> </span>nci<span class="w"> </span>--lat<span class="w"> </span><span class="m">42</span>.36<span class="w"> </span>--lon<span class="w"> </span>-71.06<span class="w"> </span>--distance<span class="w"> </span><span class="m">50</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>NCI accepts one quoted value total across <code>--biomarker</code>, <code>--mutation</code>, and
+<code>--criteria</code>, sending it once as the CTS <code>biomarkers</code> field. Repeated values or
+combining those flags is rejected. NCI also rejects the CTGov-only
+<code>--study-type</code>, <code>--sponsor</code>, <code>--date-from</code>, and <code>--date-to</code> filters before any
+request rather than silently ignoring them.</p>
+<p>For higher limits and reliable authenticated access, set <code>NCI_API_KEY</code>.</p>
 <h2 id="get-a-trial-by-nct-id">Get a trial by NCT ID<a class="headerlink" href="#get-a-trial-by-nct-id" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665
 </code></pre></div>
-<p>The default response summarizes title, status, condition context, and source metadata.</p>
+<p>The default response summarizes title, status, condition context, intervention names, and source metadata. CTGov detail can include source-provided intervention alternate names; for investigational codes, follow-ups may use safer search/article routes instead of a brittle drug-card lookup.</p>
 <h2 id="request-trial-sections">Request trial sections<a class="headerlink" href="#request-trial-sections" title="Permanent link">&para;</a></h2>
 <p>Eligibility:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>eligibility
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>eligibility
+</code></pre></div>
+<p>BioMCP stores eligibility in its local strict trial value for both ClinicalTrials.gov and NCI. JSON keeps registry text, age bounds, source-coded sex, healthy-subject state, and ordered identified criteria as separate facts. Every eligibility object contains all five members. Missing source facts appear as <code>null</code>. Explicit empty sex or criterion lists remain empty arrays.</p>
+<p>Age bounds preserve the source text, quantity, unit, and minimum or maximum role. NCI's <code>999 Years</code> maximum uses the named <code>nci-cts-v2-999-years-no-upper-bound</code> rule and renders as <code>Any age</code>. Default trial Markdown keeps the concise age summary. The explicit <code>eligibility</code> section shows the full readable eligibility presentation.</p>
+<p>ClinicalTrials.gov registry text also reports whether posted trial documents are available. Markdown offers a cautious follow-up when documents exist. BioMCP does not claim that a protocol resolves any criterion.</p>
+<p>Posted CTGov documents use standalone manifest and retrieval forms:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>biomcp<span class="w"> </span>--json<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT03361748<span class="w"> </span>documents
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT03361748<span class="w"> </span>document<span class="w"> </span>Prot_SAP_000.pdf<span class="w"> </span>&gt;<span class="w"> </span>protocol.pdf
+</code></pre></div>
+<p>Use only an exact filename advertised by the current manifest. Retrieval returns
+raw bytes without PDF parsing or conversion and rejects bodies larger than 32
+MiB. Document forms are unavailable with <code>--source nci</code> and are not included in
+ordinary <code>all</code>.</p>
+<p>Contacts:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>contacts
 </code></pre></div>
 <p>Locations:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>locations
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>locations
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>--offset<span class="w"> </span><span class="m">20</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>contacts<span class="w"> </span>locations
 </code></pre></div>
+<p>Locations use a 20-site page by default. <code>--offset</code> and <code>--limit</code> select an
+explicit page, and Markdown renders that full selected page with a footer that
+reports its shown count, total, offset, and limit. When <code>contacts</code> and
+<code>locations</code> are combined, top-level site contacts are scoped to the returned
+sites; central contacts remain visible even when the page is empty.
+When more locations remain, Markdown prints the complete <code>Next:</code> command and
+JSON adds the same value as <code>location_pagination.continuation_command</code>.</p>
+<p>A contacts-only response remains complete. Standalone <code>all</code> JSON and batch
+JSON are also complete and unpaginated. Unpaginated <code>all</code> and batch Markdown
+show at most 20 sites, disclose that display cap when it applies, and show only
+the top-level site contacts belonging to those visible sites. Their printed
+continuation starts at offset 20 and retains the card source and contact view.</p>
 <p>Outcomes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>outcomes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>outcomes
 </code></pre></div>
 <p>Arms/interventions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>arms
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>arms
 </code></pre></div>
 <p>References:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>references
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>references
 </code></pre></div>
 <p>All sections where supported:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>biomcp<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665<span class="w"> </span>all
 </code></pre></div>
+<h2 id="helper-commands">Helper commands<a class="headerlink" href="#helper-commands" title="Permanent link">&para;</a></h2>
+<p>There is no direct <code>trial &lt;helper&gt;</code> family. Use inbound pivots such as
+<code>biomcp gene trials &lt;gene&gt;</code>, <code>biomcp variant trials &lt;id&gt;</code>,
+<code>biomcp drug trials &lt;name&gt;</code>, or <code>biomcp disease trials &lt;name&gt;</code> when the anchor
+entity is already known.</p>
 <h2 id="downloaded-text-and-cache">Downloaded text and cache<a class="headerlink" href="#downloaded-text-and-cache" title="Permanent link">&para;</a></h2>
 <p>Large text blocks (for example, eligibility text) are cached in the BioMCP download area.
 This keeps repeated lookups responsive.</p>
 <h2 id="json-mode">JSON mode<a class="headerlink" href="#json-mode" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>biomcp<span class="w"> </span>--json<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>biomcp<span class="w"> </span>--json<span class="w"> </span>get<span class="w"> </span>trial<span class="w"> </span>NCT02576665
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>biomcp<span class="w"> </span>--json<span class="w"> </span>search<span class="w"> </span>trial<span class="w"> </span>-i<span class="w"> </span>daraxonrasib<span class="w"> </span>--limit<span class="w"> </span><span class="m">20</span>
 </code></pre></div>
-<h2 id="trial-matching-tips">Trial matching tips<a class="headerlink" href="#trial-matching-tips" title="Permanent link">&para;</a></h2>
+<h2 id="practical-tips">Practical tips<a class="headerlink" href="#practical-tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Start broad on condition, then add intervention and biomarker filters.</li>
 <li>Keep limits low while tuning search criteria.</li>
-<li>Use <code>eligibility</code> section only when you need raw criteria text.</li>
+<li>Use <code>eligibility</code> for registry text, source-coded sex, age bounds, healthy-subject state, ordered NCI criteria, and ClinicalTrials.gov document provenance.</li>
+<li>Use <code>contacts</code> when you need CTGov central or site contact details.</li>
 </ul>
 <h2 id="related-guides">Related guides<a class="headerlink" href="#related-guides" title="Permanent link">&para;</a></h2>
 <ul>
